@@ -8,7 +8,11 @@ export function AddModal({ show, handleClose, selectedDrName, appointments, setA
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+setAppointments([...appointments,{id: appointments.length+1,
+patient: patientName,
+day:date,
+consulted:false,
+doctor:selectedDrName}])
     handleClose();
   };
   return (
