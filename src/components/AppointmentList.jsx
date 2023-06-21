@@ -24,7 +24,7 @@ import { FaTimesCircle } from "react-icons/fa";const AppointmentList = ({ appoin
         const { id, patient, consulted, doctor, day } = item;
         return (
           <div key={id} className={consulted ? "appointments consulted" : "appointments"} onDoubleClick={()=>handleDoubleClick(id)} >
-            <Row>
+            <Row className="d-flex align-items-center">
               <Col>
                 <h4>{patient}</h4>
                 <h5>{doctor}</h5>
@@ -32,7 +32,7 @@ import { FaTimesCircle } from "react-icons/fa";const AppointmentList = ({ appoin
                 <h6>{new Date(day).toLocaleDateString()}</h6>
                 <h6>{new Date(day).toLocaleTimeString()}</h6>
               </Col>
-              <Col className="">
+              <Col className="text-end">
                 <FaTimesCircle  className="text-danger fs-3" type="button"
                 onClick={()=>handleDelete(id)}/>
               </Col>
